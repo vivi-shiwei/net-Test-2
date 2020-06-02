@@ -136,6 +136,8 @@ import {
     AlertDescription,
 } from "@chakra-ui/core";
 import { MdBuild, MdCall, MdSettings, MdGraphicEq, StarIcon } from "react-icons/md"
+import { DarkModeSwitch } from '../components/DarkModeSwitch'
+import { Container } from '../components/Container'
 function HomePage() {
     const colors = ["red.200", "teal.200", "blue.200"];
     const [tabIndex, setTabIndex] = React.useState(0);
@@ -204,13 +206,14 @@ function HomePage() {
     };
 
     return (
-        <>
+        <Container>
+            <DarkModeSwitch />
             <Accordion allowToggle>
                 <AccordionItem>
                     <AccordionHeader>
                         <Box flex="1" textAlign="left">
                             Section 1 title
-            </Box>
+                        </Box>
                         <AccordionIcon />
                     </AccordionHeader>
                     <AccordionPanel pb={4}>
@@ -218,14 +221,14 @@ function HomePage() {
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.
-          </AccordionPanel>
+                    </AccordionPanel>
                 </AccordionItem>
 
                 <AccordionItem>
                     <AccordionHeader>
                         <Box flex="1" textAlign="left">
                             Section 2 title
-            </Box>
+                        </Box>
                         <AccordionIcon />
                     </AccordionHeader>
                     <AccordionPanel pb={4}>
@@ -233,7 +236,7 @@ function HomePage() {
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.
-          </AccordionPanel>
+                    </AccordionPanel>
                 </AccordionItem>
             </Accordion>
             <Alert
@@ -247,10 +250,10 @@ function HomePage() {
                 <AlertIcon size="40px" mr={0} />
                 <AlertTitle mt={4} mb={1} fontSize="lg">
                     Application submitted!
-  </AlertTitle>
+                </AlertTitle>
                 <AlertDescription maxWidth="sm">
                     Thanks for submitting your application. Our team will get back to you soon.
-  </AlertDescription>
+                </AlertDescription>
             </Alert>
             <Button ref={btnRef} onClick={onOpenAlert}>
                 Discard
@@ -271,14 +274,14 @@ function HomePage() {
                             <AlertDialogBody>
                                 Are you sure you want to discard all of your notes? 44 words
                                 will be deleted.
-              </AlertDialogBody>
+                            </AlertDialogBody>
                             <AlertDialogFooter>
                                 <Button ref={cancelRef} onClick={onCloseAlert}>
                                     No
-                </Button>
+                                </Button>
                                 <Button variantColor="red" ml={3}>
                                     Yes
-                </Button>
+                                </Button>
                             </AlertDialogFooter>
                         </AlertDialogContent>
                     </AlertDialog>
@@ -303,9 +306,9 @@ function HomePage() {
                 <Box ml="3">
                     <Text fontWeight="bold">
                         Segun Adebayo
-      <Badge ml="1" variantColor="green">
+                        <Badge ml="1" variantColor="green">
                             New
-      </Badge>
+                        </Badge>
                     </Text>
                     <Text fontSize="sm">UI Engineer</Text>
                 </Box>
@@ -317,7 +320,7 @@ function HomePage() {
                     <Box d="flex" alignItems="baseline">
                         <Badge rounded="full" px="2" variantColor="teal">
                             New
-          </Badge>
+                        </Badge>
                         <Box
                             color="gray.500"
                             fontWeight="semibold"
@@ -327,7 +330,7 @@ function HomePage() {
                             ml="2"
                         >
                             {property.beds} beds &bull; {property.baths} baths
-          </Box>
+                        </Box>
                     </Box>
 
                     <Box
@@ -344,7 +347,7 @@ function HomePage() {
                         {property.formattedPrice}
                         <Box as="span" color="gray.600" fontSize="sm">
                             / wk
-          </Box>
+                        </Box>
                     </Box>
 
                     <Box d="flex" mt="2" alignItems="center">
@@ -406,12 +409,12 @@ function HomePage() {
             </Stack>
             <Button variantColor="blue" onClick={handleToggle}>
                 Toggle
-      </Button>
+            </Button>
             <Collapse mt={4} isOpen={show}>
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
                 terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
                 labore wes anderson cred nesciunt sapiente ea proident.
-      </Collapse>
+            </Collapse>
             <label>
                 {/* This is the sibling input, it's visually hidden */}
                 <VisuallyHidden as="input" type="checkbox" defaultChecked />
@@ -430,7 +433,7 @@ function HomePage() {
                 {/* You can pass additional text */}
                 <Box as="span" verticalAlign="top" ml={3}>
                     Checkbox Label
-  </Box>
+                </Box>
             </label>
             <Box>
                 <span>Part 1</span>
@@ -439,7 +442,7 @@ function HomePage() {
             </Box>
             <Button ref={btnRef} variantColor="teal" onClick={onOpen}>
                 Open
-        </Button>
+            </Button>
             <Drawer
                 isOpen={isOpen}
                 placement="right"
@@ -458,7 +461,7 @@ function HomePage() {
                     <DrawerFooter>
                         <Button variant="outline" mr={3} onClick={onClose}>
                             Cancel
-            </Button>
+                        </Button>
                         <Button color="blue">Save</Button>
                     </DrawerFooter>
                 </DrawerContent>
@@ -485,12 +488,12 @@ function HomePage() {
                 <Flex bg="blue.50" size="150px" align="center" justify="center">
                     <Text textAlign="center" bg="pink.50">
                         Box 2
-          </Text>
+                    </Text>
                 </Flex>
                 <Box>
                     <Text bg="tomato" color="white">
                         Box 3
-          </Text>
+                    </Text>
                 </Box>
             </Flex>
             <Formik
@@ -567,26 +570,26 @@ function HomePage() {
             <List spacing={3}>
                 <ListItem>
                     <ListIcon icon="check-circle" color="green.500" />
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-  </ListItem>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </ListItem>
                 <ListItem>
                     <ListIcon icon="check-circle" color="green.500" />
-    Assumenda, quia temporibus eveniet a libero incidunt suscipit
-  </ListItem>
+                    Assumenda, quia temporibus eveniet a libero incidunt suscipit
+                </ListItem>
                 <ListItem>
                     <ListIcon icon="check-circle" color="green.500" />
-    Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-  </ListItem>
+                    Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+                </ListItem>
                 {/* You can also use custom icons from react-icons */}
                 <ListItem>
                     <ListIcon icon={MdSettings} color="green.500" />
-    Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-  </ListItem>
+                    Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+                </ListItem>
             </List>
             <Menu>
                 <MenuButton as={Button} variantColor="pink">
                     Profile
-  </MenuButton>
+                </MenuButton>
                 <MenuList>
                     <MenuGroup title="Profile">
                         <MenuItem>My Account</MenuItem>
@@ -670,7 +673,7 @@ function HomePage() {
                     fontWeight="semibold"
                 >
                     Unvisited Link
-  </PseudoBox>
+                </PseudoBox>
                 <PseudoBox
                     as="a"
                     href="/pseudobox"
@@ -680,12 +683,12 @@ function HomePage() {
                     _visited={{ color: "purple.600" }}
                 >
                     Visited Link
-  </PseudoBox>
+                </PseudoBox>
             </Stack>
             <RadioGroup isInline spacing={4} defaultValue="1">
                 <Radio value="1" isDisabled>
                     Radio 1
-  </Radio>
+                </Radio>
                 <Radio value="2">Radio 2</Radio>
                 <Radio value="3">Radio 3</Radio>
             </RadioGroup>
@@ -727,8 +730,8 @@ function HomePage() {
                     <StatNumber>345,670</StatNumber>
                     <StatHelpText>
                         <StatArrow type="increase" />
-      23.36%
-    </StatHelpText>
+                    23.36%
+                    </StatHelpText>
                 </Stat>
 
                 <Stat>
@@ -736,8 +739,8 @@ function HomePage() {
                     <StatNumber>45</StatNumber>
                     <StatHelpText>
                         <StatArrow type="decrease" />
-      9.05%
-    </StatHelpText>
+                    9.05%
+                    </StatHelpText>
                 </Stat>
             </StatGroup>
             <Stack spacing={8}>
@@ -831,7 +834,7 @@ function HomePage() {
                 }
             >
                 Show Success Toast
-    </Button>
+            </Button>
             <Stack shouldWrapChildren spacing={6}>
                 <Tooltip label="Right end" placement="right-end">
                     <Button variant="outline">Right-End</Button>
@@ -853,7 +856,7 @@ function HomePage() {
                     <Button variant="outline">Left-End</Button>
                 </Tooltip>
             </Stack>
-        </>
+        </Container>
     )
 }
 
