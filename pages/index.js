@@ -602,25 +602,22 @@ function HomePage() {
                     </MenuGroup>
                 </MenuList>
             </Menu>
-            {sizes.map(size => (
-                <Button
-                    onClick={() => handleSizeClick(size)}
-                    key={size}
-                    m={4}
-                >{`Open ${size} Modal`}</Button>
-            ))}
+            <Button onClick={onOpenModel}>Open Modal</Button>
 
-            <Modal onClose={onCloseModel} size={size} isOpen={isOpenModel}>
+            <Modal closeOnOverlayClick={false} isOpen={isOpenModel} onClose={onCloseModel}>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalHeader>Create your account</ModalHeader>
                     <ModalCloseButton />
-                    <ModalBody>
-                        Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
-                        Sunt ad dolore quis aute consequat. Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                    <ModalBody pb={6}>
+                        <Lorem count={2} />
                     </ModalBody>
+
                     <ModalFooter>
-                        <Button>Close</Button>
+                        <Button variantColor="blue" mr={3}>
+                            Save
+                        </Button>
+                        <Button onClick={onCloseModel}>Cancel</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

@@ -9,9 +9,9 @@ export const Container = (props) => {
     const color = { light: 'black', dark: 'white' }
     return (
         <Box
-            // direction="column"
-            // alignItems="center"
-            // justifyContent="flex-start"
+            direction="column"
+            alignItems="center"
+            justifyContent="flex-start"
             bg={bgColor[colorMode]}
             color={color[colorMode]}
             {...props}
